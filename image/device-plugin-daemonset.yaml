@@ -1,3 +1,9 @@
+apiVersion: node.k8s.io/v1
+kind: RuntimeClass
+metadata:
+  name: nvidia
+handler: nvidia
+---
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
@@ -17,6 +23,7 @@ spec:
       labels:
         name: nvidia-device-plugin-ds
     spec:
+      runtimeClassName: nvidia
       tolerations:
       # Allow this pod to be rescheduled while the node is in "critical add-ons only" mode.
       # This, along with the annotation above marks this pod as a critical add-on.
@@ -26,7 +33,7 @@ spec:
       - env:
         - name: DP_DISABLE_HEALTHCHECKS
           value: xids
-        image: nvidia/k8s-device-plugin:1.11
+        image: registry.gitlab.com/nvidia/kubernetes/device-plugin/staging/k8s-device-plugin:8b416016
         name: nvidia-device-plugin-ctr
         securityContext:
           allowPrivilegeEscalation: true

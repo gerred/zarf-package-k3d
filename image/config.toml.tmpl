@@ -23,9 +23,9 @@ version = 2
 
 {{- if .NodeConfig.AgentConfig.Snapshotter }}
 [plugins."io.containerd.grpc.v1.cri".containerd]
+  default_runtime_name = "nvidia"
   snapshotter = "{{ .NodeConfig.AgentConfig.Snapshotter }}"
   disable_snapshot_annotations = {{ if eq .NodeConfig.AgentConfig.Snapshotter "stargz" }}false{{else}}true{{end}}
-  default_runtime_name = "nvidia"
 {{ if eq .NodeConfig.AgentConfig.Snapshotter "stargz" }}
 {{ if .NodeConfig.AgentConfig.ImageServiceSocket }}
 [plugins."io.containerd.snapshotter.v1.stargz"]
