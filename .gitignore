@@ -1,3 +1,6 @@
 *.tar.zst
 k3d.sh
 metallb.sh
+bigbang.dev*
+zarf-sbom/
+preflight.sh

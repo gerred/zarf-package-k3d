@@ -1,7 +1,7 @@
 package:
   create: 
     set:
-      zarf_version: v0.27.1
+      zarf_version: v0.30.1
       dubbd_version: 0.3.0
     max_package_size: "1000000000"
   # this gets used for all the deploys, so its wierd

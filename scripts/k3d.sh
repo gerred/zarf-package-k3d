@@ -13,7 +13,7 @@ else
     --port 443:443@loadbalancer \
     --port 80:8080@loadbalancer \
     --image ghcr.io/runyontr/packages/rancher/k3s:v1.27.2-k3s1-cuda \
-    --gpus=2 \
+    --gpus=1 \
     dubbd
 fi
 

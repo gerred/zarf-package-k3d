@@ -4,6 +4,10 @@ Zarf package that deploys a k3d cluster that has GPU support
 
 ## Deployment
 
+1. Configure the [zarf config file](./zarf-config.yaml) and [zarf manifest](./zarf.yaml) to be the correct zarf version.
+2. Specify the number of GPUs the runtime should have access to in [the k3d script](./scripts/k3d.sh)
+3. Follow the instructions below in your CLI:
+
 ```bash
 zarf package create .
 zarf package deploy zarf-package-k3d-local-amd64-v1.27.2.tar.zst

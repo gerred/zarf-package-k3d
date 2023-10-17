@@ -12,7 +12,7 @@ metadata:
 
 variables:
   - name: ZARF_VERSION
-    default: v0.27.1
+    default: v0.30.1
   - name: DUBBD_VERSION
     default: 0.3.0
 
